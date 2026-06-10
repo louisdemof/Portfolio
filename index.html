@@ -53,7 +53,7 @@
   .embed-frame iframe{width:100%;height:660px;border:0;background:#f8fafb;display:block}
   @media(max-width:760px){.embed-frame iframe{height:540px}}
 
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:14px;max-width:760px}
   @media(max-width:860px){.cards{grid-template-columns:1fr}}
   .pcard{padding:22px 22px 20px;display:flex;flex-direction:column;min-height:210px;position:relative;overflow:hidden}
   .pcard::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--teal)}
@@ -71,6 +71,14 @@
   footer b{color:var(--txt)}
   .disc{font-size:11px;color:var(--mut);margin-top:16px;line-height:1.6}
   .disc b{color:var(--amber)}
+.fitband{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 36px}
+  @media(max-width:760px){.fitband{grid-template-columns:1fr}}
+  .fititem{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
+  .fititem::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--teal)}
+  .fititem:nth-child(2)::before{background:var(--lime)}
+  .fititem:nth-child(3)::before{background:var(--blue)}
+  .fititem h3{font-size:14px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+  .fititem p{font-size:12.5px;color:var(--mut);line-height:1.5}
 </style>
 </head>
 <body>
@@ -81,14 +89,20 @@
       <div class="kick">Portfólio · Energia Renovável</div>
       <h1 class="name">Louis de Moffarts</h1>
       <div class="role">Business Development Manager · Fotovoltaico &amp; BESS</div>
-      <div class="blurb">Criação de novas linhas de negócio, go-to-market e inteligência de mercado em energia renovável. Ferramentas que construí para transformar dados regulatórios da ANEEL em decisão comercial.</div>
+      <div class="blurb">Há quase 3 anos na Helexia (Grupo Voltalia) dimensionando projetos solares e sistemas de armazenamento (BESS) e estruturando propostas técnico-comerciais. Construí ferramentas próprias para dimensionar projetos, calcular viabilidade e priorizar oportunidades a partir de problemas de qualidade de energia (DIC/FIC).</div>
     </div>
     <div class="links">
       <a href="mailto:louisdemof@gmail.com"><b>louisdemof@gmail.com</b></a>
-      <a href="https://www.linkedin.com/in/louisdemoffarts" target="_blank">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/louis-de-moffarts-06573345/" target="_blank">LinkedIn</a>
       <span>Helexia Brasil · Grupo Voltalia</span>
       <span>Rio de Janeiro, BR</span>
     </div>
+  </div>
+
+  <div class="fitband">
+    <div class="fititem"><h3>Quase 3 anos em FV + BESS</h3><p>Na Helexia (Grupo Voltalia), desde 2024, dimensionando projetos solares e de armazenamento e estruturando ofertas.</p></div>
+    <div class="fititem"><h3>Propostas técnico-comerciais</h3><p>Dimensionamento de sistemas FV e BESS, CAPEX/OPEX, viabilidade e o racional comercial da oferta.</p></div>
+    <div class="fititem"><h3>Ferramentas próprias</h3><p>Dimensionam projetos, calculam viabilidade e priorizam oportunidades a partir da qualidade de energia (DIC/FIC).</p></div>
   </div>
 
   <!-- FEATURED: embedded pilot map -->
@@ -121,24 +135,17 @@
   <!-- TOOLS -->
   <div class="sechead" style="margin-top:46px"><span class="n">02</span><h2>Ferramentas</h2></div>
   <div class="cards">
-    <a class="card pcard c3" href="https://louisdemof.github.io/GD-analyzer/" target="_blank">
-      <div class="ico">// simulator</div>
-      <h4>GD Analyzer</h4>
-      <p>Simulador de Geração Distribuída: modela compensação, economia e viabilidade de contratação de GD a partir do perfil e da tarifa do cliente.</p>
-      <div class="stk"><span>Lei 14.300</span><span>Compensação</span><span>Viabilidade</span></div>
-      <div class="go blue">Abrir ferramenta →</div>
-    </a>
     <a class="card pcard" href="https://louisdemof.github.io/helexia-bess-analyzer/" target="_blank">
       <div class="ico">// analyzer</div>
       <h4>BESS Analyzer</h4>
-      <p>Dimensionamento e viabilidade de armazenamento: peak shaving, arbitragem e backup a partir do perfil de carga e da estrutura tarifária.</p>
+      <p>Dimensiona o sistema BESS e calcula a viabilidade (peak shaving, arbitragem e backup) a partir do perfil de carga e da estrutura tarifária.</p>
       <div class="stk"><span>Sizing</span><span>Peak shaving</span><span>Arbitragem</span></div>
       <div class="go">Abrir ferramenta →</div>
     </a>
     <a class="card pcard c2" href="BESS_Pilot_Map_DEMO.html" target="_blank">
       <div class="ico">// market intel</div>
       <h4>Mapa de Clientes C&amp;I</h4>
-      <p>1.439 UCs industriais priorizadas por DIC/FIC, consumo e exposição tarifária. Mapa interativo com filtros e ranking de alvos.</p>
+      <p>Prioriza 1.439 UCs industriais por qualidade de energia (DIC/FIC), consumo e exposição tarifária. Mapa interativo com filtros e ranking de alvos.</p>
       <div class="stk"><span>BDGD</span><span>DIC/FIC</span><span>Python</span></div>
       <div class="go lime">Abrir mapa →</div>
     </a>
@@ -148,7 +155,7 @@
 
   <footer>
     <div>Construído por <b>Louis de Moffarts</b> · Business Development Manager, Energia Renovável</div>
-    <div><a href="mailto:louisdemof@gmail.com">louisdemof@gmail.com</a> · <a href="https://www.linkedin.com/in/louisdemoffarts" target="_blank">LinkedIn</a></div>
+    <div><a href="mailto:louisdemof@gmail.com">louisdemof@gmail.com</a> · <a href="https://www.linkedin.com/in/louis-de-moffarts-06573345/" target="_blank">LinkedIn</a></div>
   </footer>
 </div>
 </body>
