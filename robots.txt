@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lmidmgroup.com/sitemap.xml
