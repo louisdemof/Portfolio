@@ -559,7 +559,7 @@
 
   <div class="cards">
 
-    <article class="case feat reveal">
+    <article class="case feat reveal" id="bbody" style="scroll-margin-top:90px">
       <div class="brand"><a class="plate" href="https://bbody.com/" target="_blank" rel="noopener" aria-label="Bbody"><img src="assets/logos/bbody.svg" alt="Bbody"></a><a class="site" href="https://bbody.com/" target="_blank" rel="noopener">bbody.com</a></div>
       <div class="meta"><b>01</b> &nbsp;<span class="en">B2B wellness brand, Belgium &amp; Netherlands · 2023 → 2026</span><span class="pt">marca B2B de bem-estar, Bélgica e Holanda · 2023 → 2026</span><span class="fr">marque bien-être B2B, Belgique et Pays-Bas · 2023 → 2026</span></div>
       <div class="featgrid">
@@ -1094,6 +1094,7 @@ function setLang(l){
   var CAL_URL='';
   if(CAL_URL){document.querySelectorAll('a.js-book').forEach(function(a){a.href=CAL_URL;a.target='_blank';a.rel='noopener';});}
   var s=null; try{s=localStorage.getItem('lang')}catch(e){}
+  try{var q=new URLSearchParams(location.search).get('lang');if(q==='fr'||q==='en'||q==='pt')s=q;}catch(e){}
   var nl=(navigator.language||'').toLowerCase();setLang(s||(nl.indexOf('fr')===0?'fr':nl.indexOf('pt')===0?'pt':'en'));
 })();
 </script>
