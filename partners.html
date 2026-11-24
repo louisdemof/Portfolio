@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Salesforce reinforcement for partner consultancies — LMIDM Group</title>
+<meta name="description" content="Senior Salesforce reinforcement for partner consultancies: Apex, Lightning Web Components, integrations and Agentforce. White label possible, in Dutch, French or English.">
+<meta property="og:title" content="Salesforce reinforcement for partner consultancies — LMIDM Group">
+<meta property="og:description" content="Senior Salesforce reinforcement for partner consultancies: Apex, Lightning Web Components, integrations and Agentforce. White label possible, in Dutch, French or English.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://lmidmgroup.com/assets/og/lmidm-group-visual.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="LMIDM Group">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lmidmgroup.com/assets/og/lmidm-group-visual.png">
+<meta property="og:url" content="https://lmidmgroup.com/partners">
+<link rel="canonical" href="https://lmidmgroup.com/partners">
+<script>
+  window.GA_ID='G-KMN45M30YG';
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+  (function(){var c=null;try{c=localStorage.getItem('consent')}catch(e){}
+    if(c==='granted')gtag('consent','update',{analytics_storage:'granted'});
+    if(window.GA_ID.indexOf('XXXX')<0){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id='+window.GA_ID;document.head.appendChild(s);gtag('js',new Date());gtag('config',window.GA_ID,{anonymize_ip:true});}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF; --off:#F5F5F3; --ink:#0A0A0A; --black:#0A0A0A;
+    --gray:#71716E; --gray2:#A3A3A0; --hair:#E7E7E4; --hairD:#242423;
+    --acc:#8B7CF6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .dsp{font-family:'Inter Tight',sans-serif;letter-spacing:-.045em}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  @media(max-width:480px){.wrap{padding:0 16px}}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:999px}
+  body.pt .en,body.pt .fr,body.pt .nl,body.en .pt,body.en .fr,body.en .nl,body.fr .en,body.fr .pt,body.fr .nl,body.nl .en,body.nl .fr,body.nl .pt{display:none!important}
+
+
+  /* ---------- motion ---------- */
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero h1,.hero .sub,.hero .facts,.hero .ctas{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero .sub{animation-delay:.12s}.hero .facts{animation-delay:.22s}.hero .ctas{animation-delay:.3s}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.hero h1,.hero .sub,.hero .facts,.hero .ctas{animation:none}.reveal{opacity:1;transform:none}}
+
+  /* hero word underline draw */
+  .mark{position:relative;white-space:nowrap}
+  .mark::after{content:"";position:absolute;left:0;bottom:.04em;height:.09em;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:left;animation:draw .6s .55s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes draw{to{transform:scaleX(1)}}
+  @media(prefers-reduced-motion:reduce){.mark::after{animation:none;transform:scaleX(1)}}
+
+  /* ticker */
+  .ticker{overflow:hidden;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:13px 0;background:var(--white)}
+  .ticker .tk{display:flex;width:max-content;animation:scroll 34s linear infinite}
+  .ticker span{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);padding:0 18px;white-space:nowrap}
+  .ticker b{color:var(--acc);font-weight:600}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.ticker .tk{animation:none}}
+
+  /* accent slices */
+  .tcard .idx{color:var(--acc)}
+  .pill.solid:hover{background:var(--acc);opacity:1}
+  a.tcard:hover .open::after{color:var(--acc)}
+  .footer .big i{font-style:normal;color:var(--acc)}
+
+  /* pills */
+  .pill{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 22px;border-radius:999px;transition:opacity .15s,background .15s,color .15s}
+  .pill.solid{background:var(--ink);color:#fff}
+  .pill.solid:hover{opacity:.82}
+  .pill.ghost{border:1px solid var(--hair);color:var(--ink)}
+  .pill.ghost:hover{border-color:var(--ink)}
+  .pill.inv{background:#fff;color:var(--ink)}
+  .pill.inv:hover{opacity:.85}
+  .pill.sm{font-size:12.5px;padding:9px 16px}
+
+  /* nav */
+  .nav{position:sticky;top:0;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);z-index:50;border-bottom:1px solid var(--hair)}
+  .nav .in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .nav .name{font-family:'Inter Tight',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em}
+  .nav .right{display:flex;align-items:center;gap:20px}
+  .nav .right a.lnk{font-size:13.5px;font-weight:500;color:var(--gray)}
+  .nav .right a.lnk:hover{color:var(--ink)}
+  .langs{display:inline-flex;border:1px solid var(--hair);border-radius:999px;overflow:hidden}
+  .langs button{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;padding:6px 13px;background:transparent;color:var(--gray);border:0;cursor:pointer}
+  .langs button.on{background:var(--ink);color:#fff}
+  .nav .name{white-space:nowrap}
+  @media(max-width:760px){.nav .right a.lnk{display:none}.nav .right{gap:10px}}
+
+  /* hero */
+  .hero{padding:110px 0 90px;text-align:center}
+  .hero h1{font-size:clamp(40px,7.4vw,84px);font-weight:700;line-height:1.0;letter-spacing:-.05em;max-width:20ch;margin:0 auto}
+  .hero .sub{margin:26px auto 0;font-size:17px;color:var(--gray);max-width:52ch}
+  .hero .facts{margin:22px auto 0;font-size:13.5px;color:var(--gray2);font-weight:500}
+  .hero .facts>span+span::before{content:"·";margin:0 10px;color:var(--hair)}
+  .hero .ctas{display:flex;gap:12px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+
+  /* black band: statement + stats */
+  .band{background:var(--black);color:#fff;padding:96px 0}
+  .band .lede{font-family:'Inter Tight',sans-serif;font-size:clamp(22px,3.4vw,34px);font-weight:600;letter-spacing:-.035em;line-height:1.15;max-width:30ch}
+  .band .lede b{color:#fff}
+  .band .lede .dim{color:#8B8B88}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;border-top:1px solid var(--hairD)}
+  @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.stats{grid-template-columns:1fr}}
+  .stat{padding:28px 28px 4px 0}
+  .stat+.stat{border-left:1px solid var(--hairD);padding-left:28px}
+  @media(max-width:860px){.stat:nth-child(3){border-left:0;padding-left:0}}
+  @media(max-width:460px){.stat{border-left:0!important;padding-left:0!important;padding-top:22px}}
+  .stat .v{font-family:'Inter Tight',sans-serif;font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.04em}
+  .stat .k{font-size:13.5px;font-weight:600;margin-top:8px}
+  .stat p{font-size:12.5px;color:#8B8B88;margin-top:6px;line-height:1.55}
+
+  /* tools */
+  .sect{padding-top:100px}
+  .shead{text-align:center;margin-bottom:46px}
+  .shead h2{font-size:clamp(30px,4.6vw,52px);font-weight:700;letter-spacing:-.045em}
+  .shead p{margin-top:12px;color:var(--gray);font-size:15.5px}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:820px){.cards{grid-template-columns:1fr}}
+  .tcard{background:var(--off);border-radius:22px;padding:34px 32px 30px;display:flex;flex-direction:column;min-height:250px;transition:transform .18s ease}
+  a.tcard:hover{transform:translateY(-3px)}
+  .tcard .idx{font-size:12px;font-weight:600;color:var(--gray2);margin-bottom:26px}
+  .tcard h3{font-family:'Inter Tight',sans-serif;font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-.035em}
+  .tcard .tagl{font-size:13px;font-weight:600;color:var(--gray);margin-top:4px}
+  .tcard p{font-size:13.5px;color:var(--gray);margin-top:14px;line-height:1.6;flex:1}
+  .tcard .foot{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
+  .tcard .open{font-size:14px;font-weight:600}
+  .tcard .open::after{content:"→";margin-left:8px;display:inline-block;transition:transform .15s}
+  a.tcard:hover .open::after{transform:translateX(4px)}
+  .chip{font-size:11px;font-weight:600;color:var(--gray);background:#fff;border:1px solid var(--hair);border-radius:999px;padding:4px 11px}
+
+  /* map showcase */
+  .mapsect{padding-top:110px}
+  .mapmedia{border-radius:26px;overflow:hidden;border:1px solid var(--hair);box-shadow:0 30px 80px -40px rgba(10,10,10,.35);margin-top:44px}
+  .mapmedia iframe{width:100%;height:640px;border:0;display:block;background:#fff}
+  @media(max-width:760px){.mapmedia iframe{height:520px}}
+  .mkpis{display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin-top:40px}
+  .mkpis>div{padding:0 30px;text-align:center;border-left:1px solid var(--hair)}
+  .mkpis>div:first-child{border-left:0}
+  .mkpis .v{font-family:'Inter Tight',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.03em}
+  .mkpis .k{font-size:12px;color:var(--gray);margin-top:2px}
+  @media(max-width:700px){.mkpis>div{padding:10px 18px;border-left:0}}
+  .mapfoot{display:flex;justify-content:center;margin-top:34px}
+
+  /* note + footer */
+  .note{font-size:12px;color:var(--gray2);line-height:1.75;max-width:74ch;margin:90px auto 0;text-align:center}
+  .note b{color:var(--gray)}
+  .footer{background:var(--black);color:#fff;margin-top:70px;padding:70px 0 60px}
+  .footer .big{font-family:'Inter Tight',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:700;letter-spacing:-.045em;line-height:1.05}
+  .footer .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+  .footer .base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:64px;padding-top:22px;border-top:1px solid var(--hairD);font-size:12.5px;color:#8B8B88}
+  .footer .base a:hover{color:#fff}
+
+  /* salesforce section */
+  .sfstats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-bottom:34px}
+  @media(max-width:860px){.sfstats{grid-template-columns:repeat(2,1fr)}}
+  .sfstats>div{padding:22px 22px 20px 0}
+  .sfstats>div+div{border-left:1px solid var(--hair);padding-left:22px}
+  @media(max-width:860px){.sfstats>div:nth-child(3){border-left:0;padding-left:0}.sfstats>div:nth-child(n+3){border-top:1px solid var(--hair)}}
+  .sfstats .v{font-family:'Inter Tight',sans-serif;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.04em}
+  .sfstats .k{font-size:12.5px;color:var(--gray);margin-top:4px;line-height:1.45}
+  .case{background:var(--off);border-radius:22px;padding:32px;display:flex;flex-direction:column}
+  .case .meta{font-size:12px;font-weight:600;color:var(--gray2);letter-spacing:.02em}
+  .case .meta b{color:var(--acc);font-weight:600}
+  .case h3{font-family:'Inter Tight',sans-serif;font-size:clamp(21px,2.4vw,26px);font-weight:700;letter-spacing:-.035em;margin-top:14px;line-height:1.15}
+  .case .who{font-size:13px;font-weight:600;color:var(--gray);margin-top:6px}
+  .case p{font-size:13.5px;color:var(--gray);margin-top:14px;line-height:1.6}
+  .case ul{list-style:none;margin-top:16px;display:grid;gap:8px}
+  .case li{font-size:13.5px;line-height:1.5;padding-left:18px;position:relative}
+  .case li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--acc)}
+  .case .res{margin-top:18px;padding-top:16px;border-top:1px solid var(--hair);font-size:13.5px;line-height:1.55}
+  .case .res b{font-weight:600}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+  .case.feat{grid-column:1/-1;background:var(--black);color:#fff;padding:40px}
+  @media(max-width:600px){.case,.case.feat{padding:26px 22px}}
+  .case.feat .meta{color:#8B8B88}
+  .case.feat .who,.case.feat p{color:#B5B5B2}
+  .case.feat .res{border-top-color:var(--hairD)}
+  .case.feat .chip{background:transparent;border-color:#3a3a38;color:#B5B5B2}
+  .featgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;margin-top:6px}
+  @media(max-width:820px){.featgrid{grid-template-columns:1fr;gap:10px}}
+  .fkpis{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:18px;align-content:start}
+  .fkpis>div{padding:16px 0;border-top:1px solid var(--hairD)}
+  .fkpis>div:nth-child(even){padding-left:18px;border-left:1px solid var(--hairD)}
+  .fkpis .v{font-family:'Inter Tight',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.04em}
+  .fkpis .k{font-size:12px;color:#8B8B88;margin-top:2px;line-height:1.45}
+  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+  @media(max-width:820px){.offers{grid-template-columns:1fr}}
+  .offer{border:1px solid var(--hair);border-radius:18px;padding:24px}
+  .offer h4{font-family:'Inter Tight',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.03em}
+  .offer p{font-size:13px;color:var(--gray);margin-top:8px;line-height:1.55}
+  .brand{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+  .plate{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 16px;background:#fff;border:1px solid var(--hair);border-radius:12px;transition:transform .15s}
+  .plate:hover{transform:translateY(-2px)}
+  .plate img{height:22px;width:auto;display:block}
+  .plate img[src*="perspectiveblue"]{height:30px}
+  .plate img[src*="restex"]{height:28px}
+  .plate span{font-family:'Inter Tight',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em;color:#0A0A0A}
+  .case.feat .plate{border-color:#fff}
+  .site{font-size:12.5px;font-weight:600;color:var(--gray)}
+  .site::after{content:" ↗"}
+  .site:hover{color:var(--acc)}
+  .case.feat .site{color:#B5B5B2}
+  .role{display:inline-block;align-self:flex-start;margin-top:14px;font-size:12px;font-weight:600;color:var(--acc);background:rgba(139,124,246,.1);border-radius:999px;padding:5px 12px}
+  .case.feat .role{background:rgba(139,124,246,.18);color:#B9AFFF}
+  .wb{margin-top:26px;padding-top:22px;border-top:1px solid var(--hairD)}
+  .wb h4{font-family:'Inter Tight',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.02em}
+  .wb .row{display:grid;grid-template-columns:repeat(4,1fr);margin-top:12px}
+  @media(max-width:820px){.wb .row{grid-template-columns:repeat(2,1fr)}}
+  .wb .row>div{padding:12px 16px 12px 0}
+  .wb .row>div+div{border-left:1px solid var(--hairD);padding-left:16px}
+  @media(max-width:820px){.wb .row>div:nth-child(3){border-left:0;padding-left:0}}
+  .wb .v{font-family:'Inter Tight',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.04em}
+  .wb .k{font-size:12px;color:#8B8B88;margin-top:2px;line-height:1.45}
+  .wb p.src{font-size:11.5px;color:#6f6f6c;margin-top:10px}
+  .shots{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+  @media(max-width:820px){.shots{grid-template-columns:1fr}}
+  .shots figure{background:#fff;border-radius:14px;overflow:hidden}
+  .shots figure.wide{grid-column:1/-1}
+  .shots img{width:100%;height:150px;object-fit:cover;object-position:top left;display:block;cursor:zoom-in}
+  .shots figure.wide img{height:auto}
+  .shots figcaption{font-size:13px;color:var(--gray);padding:12px 14px;line-height:1.5;background:#f5f5f3}
+  .shots figcaption b{color:var(--ink)}
+  .lb{position:fixed;inset:0;background:rgba(10,10,10,.86);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;cursor:zoom-out}
+  .lb.on{display:flex}
+  .lb img{max-width:100%;max-height:100%;border-radius:10px}
+  .offer{display:flex;flex-direction:column}
+  .offer p{flex:1}
+  .offer .price{margin-top:16px;padding-top:12px;border-top:1px solid var(--hair);font-size:13px;color:var(--gray)}
+  .offer .price b{font-family:'Inter Tight',sans-serif;font-size:20px;color:var(--ink);letter-spacing:-.03em}
+  .cform{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin:0 auto}
+  @media(max-width:640px){.cform{grid-template-columns:1fr}}
+  .cform label{display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:var(--gray)}
+  .cform .full{grid-column:1/-1}
+  .cform input,.cform select,.cform textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--off);border:1px solid var(--hair);border-radius:12px;padding:12px 14px;width:100%}
+  .cform textarea{min-height:140px;resize:vertical}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--acc);outline-offset:1px;background:#fff}
+  .cform .hp{position:absolute;left:-9999px}
+  .cform .actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .cform button{border:0;cursor:pointer;font-family:inherit}
+  .cform .msg{font-size:13.5px;color:var(--gray)}
+  .cform .msg.ok{color:#1a7f4b}.cform .msg.err{color:#c0392b}
+  .cc{position:fixed;left:16px;right:16px;bottom:16px;max-width:560px;margin:0 auto;background:var(--ink);color:#fff;border-radius:16px;padding:18px 20px;z-index:90;display:none;box-shadow:0 20px 50px -20px rgba(0,0,0,.5)}
+  .cc.on{display:block}
+  .cc p{font-size:13.5px;line-height:1.55;color:#d6d6d3}
+  .cc .b{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .cc button{font-family:inherit;font-size:13px;font-weight:600;border-radius:999px;padding:9px 18px;cursor:pointer;border:1px solid #3a3a38;background:transparent;color:#fff}
+  .cc button.ok{background:#fff;color:var(--ink);border-color:#fff}
+  .roles{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+  .roles>span{font-size:12.5px;font-weight:600;border:1px solid var(--hair);border-radius:999px;padding:6px 14px;color:var(--ink)}
+  .results{background:var(--off);border-radius:22px;padding:26px 28px;margin-bottom:18px}
+  .rh,.bah{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+  .rrow{display:grid;grid-template-columns:repeat(4,1fr);margin-top:10px}
+  @media(max-width:860px){.rrow{grid-template-columns:repeat(2,1fr)}}
+  .rrow>div{padding:12px 18px 6px 0}
+  .rrow>div+div{border-left:1px solid var(--hair);padding-left:18px}
+  @media(max-width:860px){.rrow>div:nth-child(3){border-left:0;padding-left:0}}
+  .rrow .v{font-family:'Inter Tight',sans-serif;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.04em}
+  .rrow .k{font-size:12.5px;color:var(--gray);margin-top:4px;line-height:1.45}
+  .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+  @media(max-width:860px){.trust{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.trust{grid-template-columns:1fr}}
+  .trust>div{border:1px solid var(--hair);border-radius:16px;padding:16px 18px;font-size:13px;color:var(--gray);line-height:1.5}
+  .trust b{display:block;color:var(--ink);font-family:'Inter Tight',sans-serif;font-size:15px;letter-spacing:-.02em;margin-bottom:4px}
+  .ba{border:1px solid var(--hair);border-radius:22px;padding:24px 28px;margin-bottom:26px;overflow-x:auto}
+  .ba table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+  .ba th{text-align:left;font-size:12px;color:var(--gray2);font-weight:600;padding:8px 12px 8px 0;border-bottom:1px solid var(--hair)}
+  .ba td{padding:11px 12px 11px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+  .ba td:first-child{color:var(--gray);text-decoration:line-through;text-decoration-color:rgba(192,57,43,.5);width:42%}
+  .ba td:last-child{font-weight:600}
+  .ba td:last-child::before{content:"✓ ";color:#1a7f4b}
+  .dual{margin-top:26px;padding-top:22px;border-top:1px solid var(--hairD)}
+  .dual h4{font-family:'Inter Tight',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.02em}
+  .dcols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+  @media(max-width:820px){.dcols{grid-template-columns:1fr}}
+  .dcols>div{border:1px solid var(--hairD);border-radius:14px;padding:16px 18px}
+  .dh{font-family:'Inter Tight',sans-serif;font-weight:700;font-size:15px;color:#B9AFFF;margin-bottom:6px}
+  .dual .src{font-size:12.5px;color:#8B8B88;margin-top:12px;line-height:1.5}
+  .offer.hl{border-color:var(--ink);box-shadow:0 18px 40px -28px rgba(10,10,10,.45)}
+  .offer .dur{font-size:13px;color:var(--gray)}
+
+  /* ===== new sections (restex, livrables, integrations, recrutement, peppol, ia, garanties, offres) ===== */
+  .kick{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:12px}
+  .shead h2{max-width:24ch;margin-left:auto;margin-right:auto}
+  .shead p{max-width:70ch;margin-left:auto;margin-right:auto}
+  .h3sub{font-family:'Inter Tight',sans-serif;font-size:clamp(20px,2.4vw,26px);font-weight:700;letter-spacing:-.03em;margin:56px 0 6px}
+  .psub{color:var(--gray);font-size:15px;margin-bottom:18px;max-width:70ch}
+  .srcnote{font-size:12px;color:var(--gray2);line-height:1.6;margin-top:14px;max-width:90ch}
+  .ctas-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .pill.ghost-dark{border:1px solid #3a3a38;color:#fff}
+  .pill.ghost-dark:hover{border-color:#fff}
+  /* restex */
+  .rx-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-bottom:18px}
+  .rx-kpis>div{padding:22px 20px 20px 0}
+  .rx-kpis>div+div{border-left:1px solid var(--hair);padding-left:20px}
+  .rx-kpis .v{font-family:'Inter Tight',sans-serif;font-size:clamp(26px,3.2vw,36px);font-weight:700;letter-spacing:-.04em}
+  .rx-kpis .k{font-size:12.5px;color:var(--gray);margin-top:6px;line-height:1.5}
+  @media(max-width:860px){.rx-kpis{grid-template-columns:repeat(2,1fr)}.rx-kpis>div:nth-child(3){border-left:0;padding-left:0}.rx-kpis>div:nth-child(n+3){border-top:1px solid var(--hair)}}
+  .rx-chart{background:var(--off);border-radius:22px;padding:26px 28px}
+  .rx-chart>b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em}
+  .rx-months{display:grid;grid-template-columns:repeat(11,1fr);gap:8px;align-items:end;height:200px;margin:16px 0 10px}
+  .rx-months>div{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%;min-width:0}
+  .rx-months i{display:block;width:100%;border-radius:6px 6px 0 0;background:#D9D9D5}
+  .rx-months i.up{background:var(--acc)}
+  .rx-months b{font-size:12px;font-weight:600}
+  .rx-months span{font-size:11px;color:var(--gray)}
+  .rx-legend{font-size:13px;color:var(--gray);line-height:1.55}
+  .rx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:18px 0}
+  @media(max-width:820px){.rx-grid{grid-template-columns:1fr}}
+  .mod{border:1px solid var(--hair);border-radius:18px;padding:22px;min-width:0}
+  .mod>b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:8px}
+  .mod>b em{font-style:normal;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--acc);white-space:nowrap}
+  .mod p{font-size:13.5px;color:var(--gray);line-height:1.6}
+  .fail{border:1px dashed #C9A8A2;background:#FCF8F7;border-radius:18px;padding:22px}
+  .fail b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em}
+  .fail ul{margin:10px 0 0 18px;font-size:13.5px;color:var(--gray);line-height:1.6}
+  .fail li{margin:5px 0}
+  /* livrables */
+  .deliver{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:820px){.deliver{grid-template-columns:1fr}}
+  .dv{background:var(--off);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+  .dv h3{font-family:'Inter Tight',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.03em;margin-top:8px}
+  .dv p{font-size:13.5px;color:var(--gray);line-height:1.6;flex:1}
+  .dv a.more{font-size:14px;font-weight:600}
+  .dv a.more:hover{color:var(--acc)}
+  .mock{background:#fff;border:1px solid var(--hair);border-radius:14px;padding:14px;font-size:12.5px;min-height:156px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+  .mock .bar{display:flex;align-items:flex-end;gap:6px;height:70px}
+  .mock .bar i{flex:1;background:var(--acc);opacity:.8;border-radius:4px 4px 0 0}
+  .mock .row2{display:flex;justify-content:space-between;gap:8px;font-size:11.5px;color:var(--gray)}
+  .mock .row2 b{display:block;font-family:'Inter Tight',sans-serif;font-size:18px;color:var(--ink);letter-spacing:-.03em}
+  .mock .bub{max-width:85%;padding:7px 11px;border-radius:12px;background:var(--off);border:1px solid var(--hair);align-self:flex-start}
+  .mock .bub.me{align-self:flex-end;background:var(--acc);color:#fff;border-color:var(--acc)}
+  .mock .stp{display:flex;gap:10px;align-items:center;background:var(--off);border:1px solid var(--hair);border-radius:10px;padding:7px 10px}
+  .mock .stp>span:first-child{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:600;background:rgba(139,124,246,.15);color:var(--acc);flex:none}
+  .mock .stp.ok>span:first-child{background:var(--acc);color:#fff}
+  .mock .stp em{margin-left:auto;font-style:normal;font-size:11px;color:var(--acc)}
+  .mock .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .mock .tiles div{background:var(--ink);color:#fff;border-radius:8px;padding:14px 6px 8px;font-size:11px;text-align:center}
+  /* integrations */
+  .integ{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:980px){.integ{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.integ{grid-template-columns:1fr}}
+  .ig{border:1px solid var(--hair);border-radius:18px;padding:20px;min-width:0;display:flex;flex-direction:column}
+  .ig .ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-family:'Inter Tight',sans-serif;font-weight:700;font-size:15px;background:rgba(139,124,246,.13);color:#5B4BD6;margin-bottom:14px}
+  .ig b{font-family:'Inter Tight',sans-serif;font-size:16px;letter-spacing:-.02em;margin-bottom:6px}
+  .ig p{font-size:13px;color:var(--gray);line-height:1.55;flex:1}
+  .ig .where{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);margin-top:12px}
+  .ig .where a:hover{text-decoration:underline}
+  /* recrutement */
+  .refs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:820px){.refs{grid-template-columns:1fr}}
+  .ref{background:var(--off);border-radius:22px;padding:26px;min-width:0}
+  .ref .who{font-size:12px;font-weight:600;color:var(--acc);letter-spacing:.02em;margin-bottom:8px}
+  .ref b{font-family:'Inter Tight',sans-serif;font-size:20px;letter-spacing:-.03em;display:block;margin-bottom:8px}
+  .ref p{font-size:13.5px;color:var(--gray);line-height:1.6}
+  .ref a{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:600}
+  .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.pains{grid-template-columns:1fr}}
+  .pains>div{border-left:3px solid var(--acc);padding:4px 0 4px 16px}
+  .pains b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em;display:block;margin-bottom:6px}
+  .pains p{font-size:13.5px;color:var(--gray);line-height:1.6}
+  .build{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;margin-top:56px}
+  @media(max-width:860px){.build{grid-template-columns:1fr}}
+  .build>*{min-width:0}
+  .build ol{list-style:none;display:grid;gap:12px;counter-reset:b;margin-top:16px}
+  .build li{border:1px solid var(--hair);border-radius:16px;padding:16px 18px}
+  .build li::before{counter-increment:b;content:counter(b,decimal-leading-zero);font-size:12px;font-weight:600;color:var(--acc);display:block;margin-bottom:4px}
+  .build li b{font-family:'Inter Tight',sans-serif;font-size:16px;letter-spacing:-.02em;display:block;margin-bottom:4px}
+  .build li p{font-size:13.5px;color:var(--gray);line-height:1.6}
+  .chat{background:var(--off);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:10px}
+  .chat .meta{font-size:12px;color:var(--gray)}
+  .chat .msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5}
+  .chat .in{background:#fff;border:1px solid var(--hair);align-self:flex-start;border-bottom-left-radius:4px}
+  .chat .out{background:var(--ink);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+  .chat .done{font-size:12.5px;color:#1a7f4b;font-weight:600}
+  .law{border:1px solid var(--hair);border-radius:18px;padding:22px;margin-top:40px}
+  .law b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em}
+  .law ul{margin:10px 0 0 18px;font-size:13.5px;color:var(--gray);line-height:1.6}
+  .law li{margin:6px 0}
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  @media(max-width:820px){.fit{grid-template-columns:1fr}}
+  .fit>div{background:var(--off);border-radius:18px;padding:22px;min-width:0}
+  .fit>div.no{background:#fff;border:1px dashed #C9C9C5}
+  .fit b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em}
+  .fit ul{margin:10px 0 0 18px;font-size:13.5px;color:var(--gray);line-height:1.6}
+  .fit li{margin:5px 0}
+  /* peppol */
+  .pp-tl{border-left:2px solid var(--hair);margin:8px 0 24px 6px}
+  .pp-tl>div{display:grid;grid-template-columns:110px 50px 1fr;gap:12px;padding:13px 0 13px 24px;position:relative;align-items:start}
+  .pp-tl>div::before{content:"";position:absolute;left:-7px;top:19px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--acc)}
+  .pp-tl>div.now::before{background:var(--acc)}
+  .pp-tl time{font-size:13px;font-weight:600;color:var(--gray);padding-top:1px;font-variant-numeric:tabular-nums}
+  .pp-tl .ppcc{font-size:11.5px;font-weight:700;color:#5B4BD6;background:rgba(139,124,246,.13);border-radius:999px;padding:2px 8px;justify-self:start}
+  .pp-tl p{font-size:14px;line-height:1.55}
+  .pp-tl small{display:block;color:var(--gray);font-size:12.5px;margin-top:3px}
+  @media(max-width:600px){.pp-tl>div{grid-template-columns:1fr;gap:4px}}
+  /* ia */
+  .duel{border:1px solid var(--hair);border-radius:22px;overflow:hidden}
+  .duel .row{display:grid;grid-template-columns:190px 1fr 1fr;border-top:1px solid var(--hair)}
+  .duel .row:first-child{border-top:0}
+  .duel .row>div{padding:16px 18px;min-width:0;font-size:14px;line-height:1.55}
+  .duel .head>div{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);background:var(--off);padding-top:12px;padding-bottom:12px}
+  .duel .head .b{color:var(--acc)}
+  .duel .when{font-family:'Inter Tight',sans-serif;font-weight:700;font-size:16px;letter-spacing:-.02em}
+  .duel .a{color:var(--gray)}
+  .duel .row:not(.head) .b{background:rgba(139,124,246,.08);border-left:3px solid var(--acc)}
+  .duel .lbl{display:none}
+  @media(max-width:760px){.duel .row{grid-template-columns:1fr}.duel .head{display:none}.duel .lbl{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gray2);margin-bottom:4px}.duel .b .lbl{color:var(--acc)}}
+  .pitch{margin-top:28px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;background:var(--black);color:#fff;border-radius:22px;padding:30px}
+  @media(max-width:820px){.pitch{grid-template-columns:1fr}}
+  .pitch h3{font-family:'Inter Tight',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.03em;margin-bottom:8px}
+  .pitch p{color:#B5B5B2;font-size:14px;line-height:1.6}
+  .pitch .ctas-row{margin-top:0;justify-content:flex-end}
+  @media(max-width:820px){.pitch .ctas-row{justify-content:flex-start}}
+  .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-items:start}
+  @media(max-width:820px){.faq{grid-template-columns:1fr}}
+  .faq details{border:1px solid var(--hair);border-radius:16px;min-width:0;background:#fff}
+  .faq summary{cursor:pointer;padding:16px 18px;font-weight:600;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--acc);font-weight:700}
+  .faq details[open] summary::after{content:"–"}
+  .faq summary:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:16px}
+  .faq details p{padding:0 18px 16px;color:var(--gray);font-size:13.5px;line-height:1.6}
+  /* garanties */
+  .keep{background:var(--off);padding:100px 0;margin-top:100px}
+  .keep .shead h2 .soft{color:var(--gray2)}
+  .guar{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media(max-width:980px){.guar{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.guar{grid-template-columns:1fr}}
+  .guar>div{background:#fff;border-radius:18px;padding:22px;min-width:0}
+  .guar b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em;display:block;margin-bottom:8px}
+  .guar p{font-size:13.5px;color:var(--gray);line-height:1.6}
+  #offres .offers{margin-top:0}
+  .pp-teaser{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;background:var(--black);color:#fff;border-radius:22px;padding:34px 36px;transition:transform .18s}
+  .pp-teaser:hover{transform:translateY(-3px)}
+  .pp-teaser .kick{color:#B9AFFF}
+  .pp-teaser h3{font-family:'Inter Tight',sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:700;letter-spacing:-.03em;line-height:1.2;max-width:34ch}
+  .pp-teaser p{color:#B5B5B2;font-size:14px;margin-top:10px;max-width:70ch}
+  @media(max-width:820px){.pp-teaser{grid-template-columns:1fr;padding:26px 22px}}
+  .divider{max-width:1140px;margin:110px auto 0;padding:0 24px}
+  .divider hr{border:0;border-top:1px solid var(--hair)}
+
+  .pp-page{padding-top:56px}
+  .pp-page .back{font-size:13px;color:var(--gray);margin-bottom:28px}
+  .pp-page .back a:hover{color:var(--ink)}
+  .pp-h1{font-size:clamp(30px,4.6vw,52px);font-weight:700;letter-spacing:-.045em;line-height:1.08;max-width:24ch;margin:0 auto}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0;counter-reset:st}
+  @media(max-width:820px){.steps{grid-template-columns:1fr}}
+  .steps div{border:1px solid var(--hair);border-radius:18px;padding:22px;counter-increment:st}
+  .steps div::before{content:counter(st,decimal-leading-zero);display:block;font-family:'Inter Tight',sans-serif;font-weight:700;color:var(--acc);font-size:14px;margin-bottom:8px}
+  .steps b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em;display:block;margin-bottom:6px}
+  .steps p{font-size:13.5px;color:var(--gray);line-height:1.6}
+  .pp-sub{max-width:62ch;margin:18px auto 0;color:var(--gray);font-size:17px;line-height:1.6}
+  .h2s{font-family:'Inter Tight',sans-serif;font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-.03em;margin:56px 0 6px}
+  .proofs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:18px 0}
+  @media(max-width:820px){.proofs{grid-template-columns:1fr}}
+  .proofs div{background:#F5F5F3;border-radius:18px;padding:22px}
+  .proofs .who{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:6px}
+  .proofs b{font-family:'Inter Tight',sans-serif;font-size:17px;letter-spacing:-.02em;display:block;margin-bottom:6px}
+  .proofs p{font-size:13.5px;color:var(--gray);line-height:1.6}
+  .proofs a{font-size:13px;font-weight:600;color:var(--acc)}
+</style>
+</head>
+<body class="en">
+
+<div class="nav">
+  <div class="wrap in">
+    <a class="name" href="/">Louis de Moffarts</a>
+    <div class="right">
+      <a class="lnk" href="/#salesforce"><span class="en">Case studies</span><span class="fr">Études de cas</span><span class="nl">Realisaties</span><span class="pt">Estudos de caso</span></a>
+      <a class="lnk" href="/#livrables"><span class="en">Services</span><span class="fr">Services</span><span class="nl">Diensten</span><span class="pt">Serviços</span></a>
+      <a class="lnk" href="peppol.html">Peppol</a>
+      <a class="lnk" href="partners.html"><span class="en">Partners</span><span class="fr">Partenaires</span><span class="nl">Partners</span><span class="pt">Parceiros</span></a>
+      <a class="lnk" href="/#contact-form"><span class="en">Contact</span><span class="fr">Contact</span><span class="nl">Contact</span><span class="pt">Contato</span></a>
+      <div class="langs" role="group" aria-label="Language">
+        <button id="btn-fr" onclick="setLang('fr')">FR</button>
+        <button id="btn-nl" onclick="setLang('nl')">NL</button>
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-pt" onclick="setLang('pt')">PT</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="wrap sect pp-page" id="partners">
+  <p class="back"><a href="/">← <span class="en">Back to LMIDM Group</span><span class="fr">Retour à LMIDM Group</span><span class="nl">Terug naar LMIDM Group</span><span class="pt">Voltar à LMIDM Group</span></a></p>
+  <div class="shead reveal">
+    <p class="kick"><span class="en">For Salesforce partners</span><span class="fr">Pour les partenaires Salesforce</span><span class="nl">Voor Salesforce-partners</span><span class="pt">Para parceiros Salesforce</span></p>
+    <h1 class="dsp pp-h1"><span class="en">Your team is at capacity and the project is starting? I reinforce your team.</span><span class="fr">Votre équipe est débordée et le projet démarre ? Je renforce votre équipe.</span><span class="nl">Uw team zit vol en het project start? Ik versterk uw team.</span><span class="pt">Sua equipe está sobrecarregada e o projeto vai começar? Eu reforço sua equipe.</span></h1>
+    <p class="pp-sub"><span class="en">A senior Salesforce profile to reinforce your team: Apex, Lightning Web Components, integrations and AI agents. Remote, under your brand or mine, in Dutch, French or English.</span><span class="fr">Un profil Salesforce senior pour renforcer votre équipe : Apex, Lightning Web Components, intégrations et agents IA. À distance, sous votre marque ou la mienne, en néerlandais, français ou anglais.</span><span class="nl">Een senior Salesforce-profiel om uw team te versterken: Apex, Lightning Web Components, integraties en AI-agents. Remote, onder uw merk of het mijne, in het Nederlands, Frans of Engels.</span><span class="pt">Um perfil Salesforce sênior para reforçar sua equipe: Apex, Lightning Web Components, integrações e agentes de IA. Remoto, com a sua marca ou a minha, em holandês, francês ou inglês.</span></p>
+    <div class="ctas-row" style="justify-content:center"><a class="pill solid js-book" href="#contact-form"><span class="en">Discuss a project</span><span class="fr">Parler d'un projet</span><span class="nl">Een project bespreken</span><span class="pt">Falar de um projeto</span></a><a class="pill ghost" href="/#salesforce"><span class="en">See the case studies</span><span class="fr">Voir les études de cas</span><span class="nl">Bekijk de realisaties</span><span class="pt">Ver os estudos de caso</span></a></div>
+  </div>
+
+  <h2 class="h2s reveal"><span class="en">What I take on</span><span class="fr">Ce que je prends en charge</span><span class="nl">Wat ik opneem</span><span class="pt">O que eu assumo</span></h2>
+  <div class="rx-grid reveal"><div class="mod"><b><span class="en">Apex and Lightning Web Components</span><span class="fr">Apex et Lightning Web Components</span><span class="nl">Apex en Lightning Web Components</span><span class="pt">Apex e Lightning Web Components</span> <em><span class="en">development</span><span class="fr">développement</span><span class="nl">development</span><span class="pt">desenvolvimento</span></em></b><p><span class="en">Business logic, triggers, batch jobs and custom Lightning pages, with tests and deployment. I pick up a ticket or a whole module.</span><span class="fr">Logique métier, triggers, traitements batch et pages Lightning sur mesure, avec tests et déploiement. Je prends un ticket ou un module entier.</span><span class="nl">Businesslogica, triggers, batch jobs en Lightning-pagina's op maat, met tests en deployment. Ik neem één ticket of een volledige module op.</span><span class="pt">Lógica de negócio, triggers, jobs em lote e páginas Lightning sob medida, com testes e deploy. Assumo um ticket ou um módulo inteiro.</span></p></div><div class="mod"><b><span class="en">Integrations</span><span class="fr">Intégrations</span><span class="nl">Integraties</span><span class="pt">Integrações</span> <em><span class="en">API</span><span class="fr">API</span><span class="nl">API</span><span class="pt">API</span></em></b><p><span class="en">Shopify and Shopify Plus B2B, ERP, accounting software, Peppol e-invoicing: REST APIs, signed webhooks, error handling and replay.</span><span class="fr">Shopify et Shopify Plus B2B, ERP, logiciel comptable, facturation Peppol : API REST, webhooks signés, gestion des erreurs et reprise.</span><span class="nl">Shopify en Shopify Plus B2B, ERP, boekhoudsoftware, Peppol e-facturatie: REST API's, ondertekende webhooks, foutafhandeling en herverwerking.</span><span class="pt">Shopify e Shopify Plus B2B, ERP, software contábil, faturação Peppol: APIs REST, webhooks assinados, tratamento de erros e reprocessamento.</span></p></div><div class="mod"><b><span class="en">Agentforce and AI agents</span><span class="fr">Agentforce et agents IA</span><span class="nl">Agentforce en AI-agents</span><span class="pt">Agentforce e agentes de IA</span> <em><span class="en">AI</span><span class="fr">IA</span><span class="nl">AI</span><span class="pt">IA</span></em></b><p><span class="en">From the first use case to production: scoping, prompts and actions, a human validating where it matters, and team adoption.</span><span class="fr">Du premier cas d'usage à la production : cadrage, prompts et actions, validation humaine là où c'est nécessaire, adoption par l'équipe.</span><span class="nl">Van de eerste use case tot productie: afbakening, prompts en acties, menselijke validatie waar het telt, en adoptie door het team.</span><span class="pt">Do primeiro caso de uso à produção: escopo, prompts e ações, validação humana onde importa, e adoção pela equipe.</span></p></div><div class="mod"><b><span class="en">Solution design and data migration</span><span class="fr">Conception et migration de données</span><span class="nl">Solution design en datamigratie</span><span class="pt">Desenho de solução e migração de dados</span> <em><span class="en">Sales Cloud</span><span class="fr">Sales Cloud</span><span class="nl">Sales Cloud</span><span class="pt">Sales Cloud</span></em></b><p><span class="en">Data model, migration from another CRM with history (Bullhorn to Salesforce, for example), documentation your team can take over.</span><span class="fr">Modèle de données, migration depuis un autre CRM avec l'historique (de Bullhorn vers Salesforce, par exemple), documentation reprenable par votre équipe.</span><span class="nl">Datamodel, migratie vanuit een ander CRM met historiek (bijvoorbeeld van Bullhorn naar Salesforce), documentatie die uw team kan overnemen.</span><span class="pt">Modelo de dados, migração de outro CRM com histórico (de Bullhorn para Salesforce, por exemplo), documentação que sua equipe pode assumir.</span></p></div></div>
+
+  <h2 class="h2s reveal"><span class="en">How we work together</span><span class="fr">Comment on travaille ensemble</span><span class="nl">Hoe we samenwerken</span><span class="pt">Como trabalhamos juntos</span></h2>
+  <div class="steps reveal"><div><b><span class="en">A 30-minute call</span><span class="fr">Un appel de 30 minutes</span><span class="nl">Een call van 30 minuten</span><span class="pt">Uma chamada de 30 minutos</span></b><p><span class="en">The project, the gap in your team, the deadline. You know quickly whether I am the right profile.</span><span class="fr">Le projet, ce qui manque dans votre équipe, l'échéance. Vous savez vite si je suis le bon profil.</span><span class="nl">Het project, wat er in uw team ontbreekt, de deadline. U weet snel of ik het juiste profiel ben.</span><span class="pt">O projeto, o que falta na sua equipe, o prazo. Você sabe rapidamente se sou o perfil certo.</span></p></div><div><b><span class="en">Your way of working</span><span class="fr">Votre façon de travailler</span><span class="nl">Uw manier van werken</span><span class="pt">Do seu jeito</span></b><p><span class="en">Fixed scope or daily rate. I work in your tools and your process: your Jira, your Git repository, your environments.</span><span class="fr">Périmètre fermé ou régie. Je travaille dans vos outils et votre process : votre Jira, votre dépôt Git, vos environnements.</span><span class="nl">Vaste scope of dagtarief. Ik werk in uw tools en uw proces: uw Jira, uw Git-repository, uw omgevingen.</span><span class="pt">Escopo fechado ou diária. Trabalho nas suas ferramentas e no seu processo: seu Jira, seu repositório Git, seus ambientes.</span></p></div><div><b><span class="en">Delivered and documented</span><span class="fr">Livré et documenté</span><span class="nl">Opgeleverd en gedocumenteerd</span><span class="pt">Entregue e documentado</span></b><p><span class="en">Tested code and documentation your team can maintain without me. Your client remains your client.</span><span class="fr">Du code testé et une documentation que votre équipe peut maintenir sans moi. Votre client reste votre client.</span><span class="nl">Geteste code en documentatie die uw team zonder mij kan onderhouden. Uw klant blijft uw klant.</span><span class="pt">Código testado e documentação que sua equipe mantém sem mim. Seu cliente continua sendo seu cliente.</span></p></div></div>
+
+  <h2 class="h2s reveal"><span class="en">What you can count on</span><span class="fr">Ce sur quoi vous pouvez compter</span><span class="nl">Waar u op kunt rekenen</span><span class="pt">Com o que você pode contar</span></h2>
+  <div class="rx-grid reveal"><div class="mod"><b><span class="en">Your client stays yours</span><span class="fr">Votre client reste le vôtre</span><span class="nl">Uw klant blijft de uwe</span><span class="pt">Seu cliente continua seu</span> <em><span class="en">white label</span><span class="fr">marque blanche</span><span class="nl">white label</span><span class="pt">white label</span></em></b><p><span class="en">Under your brand if you prefer. No direct contact with your client without your agreement, and no poaching.</span><span class="fr">Sous votre marque si vous le préférez. Aucun contact direct avec votre client sans votre accord, et aucun débauchage.</span><span class="nl">Onder uw merk als u dat verkiest. Geen rechtstreeks contact met uw klant zonder uw akkoord, en geen overname.</span><span class="pt">Com a sua marca, se preferir. Nenhum contato direto com seu cliente sem o seu acordo, e nenhuma captação.</span></p></div><div class="mod"><b><span class="en">Three working languages</span><span class="fr">Trois langues de travail</span><span class="nl">Drie werktalen</span><span class="pt">Três idiomas de trabalho</span> <em><span class="en">NL · FR · EN</span><span class="fr">NL · FR · EN</span><span class="nl">NL · FR · EN</span><span class="pt">NL · FR · EN</span></em></b><p><span class="en">Workshops, documentation and user training in Dutch, French or English, plus Portuguese.</span><span class="fr">Ateliers, documentation et formation des utilisateurs en néerlandais, français ou anglais, et en portugais.</span><span class="nl">Workshops, documentatie en gebruikersopleiding in het Nederlands, Frans of Engels, en ook in het Portugees.</span><span class="pt">Workshops, documentação e treinamento de usuários em holandês, francês ou inglês, e também em português.</span></p></div></div>
+
+  <h2 class="h2s reveal"><span class="en">Already delivered</span><span class="fr">Déjà livré</span><span class="nl">Al opgeleverd</span><span class="pt">Já entregue</span></h2>
+  <div class="proofs reveal"><div><p class="who"><span class="en">Bbody · B2B wellness brand, Belgium</span><span class="fr">Bbody · marque B2B de bien-être, Belgique</span><span class="nl">Bbody · B2B-wellnessmerk, België</span><span class="pt">Bbody · marca B2B de bem-estar, Bélgica</span></p><b><span class="en">Sales Cloud and Shopify Plus B2B as one tool, in native Apex</span><span class="fr">Sales Cloud et Shopify Plus B2B comme un seul outil, en Apex natif</span><span class="nl">Sales Cloud en Shopify Plus B2B als één tool, in native Apex</span><span class="pt">Sales Cloud e Shopify Plus B2B como uma só ferramenta, em Apex nativo</span></b><p><span class="en">Two-way integration and Lightning pages for the sales reps. About 90% of revenue now runs through Salesforce.</span><span class="fr">Intégration dans les deux sens et pages Lightning pour les commerciaux. Environ 90 % du chiffre d'affaires passe désormais par Salesforce.</span><span class="nl">Integratie in beide richtingen en Lightning-pagina's voor de verkopers. Ongeveer 90% van de omzet loopt nu via Salesforce.</span><span class="pt">Integração nos dois sentidos e páginas Lightning para os vendedores. Cerca de 90% da receita passa agora pelo Salesforce.</span></p><a href="/#bbody"><span class="en">Read the case</span><span class="fr">Lire le cas</span><span class="nl">Lees de realisatie</span><span class="pt">Ler o caso</span> →</a></div><div><p class="who"><span class="en">Perspective Blue · recruitment, Brussels</span><span class="fr">Perspective Blue · recrutement, Bruxelles</span><span class="nl">Perspective Blue · rekrutering, Brussel</span><span class="pt">Perspective Blue · recrutamento, Bruxelas</span></p><b><span class="en">A complete recruitment CRM in 10 days</span><span class="fr">Un CRM de recrutement complet en 10 jours</span><span class="nl">Een volledig rekruteringsCRM in 10 dagen</span><span class="pt">Um CRM de recrutamento completo em 10 dias</span></b><p><span class="en">Candidates, jobs, applications and placements in Sales Cloud. In service since 2021.</span><span class="fr">Candidats, jobs, candidatures et placements dans Sales Cloud. En service depuis 2021.</span><span class="nl">Kandidaten, vacatures, sollicitaties en plaatsingen in Sales Cloud. In gebruik sinds 2021.</span><span class="pt">Candidatos, vagas, candidaturas e colocações no Sales Cloud. Em uso desde 2021.</span></p></div><div><p class="who"><span class="en">Arbalett · recruitment</span><span class="fr">Arbalett · recrutement</span><span class="nl">Arbalett · rekrutering</span><span class="pt">Arbalett · recrutamento</span></p><b><span class="en">From Bullhorn to Salesforce without losing history</span><span class="fr">De Bullhorn à Salesforce sans perdre l'historique</span><span class="nl">Van Bullhorn naar Salesforce zonder historiek te verliezen</span><span class="pt">De Bullhorn para Salesforce sem perder o histórico</span></b><p><span class="en">Accounts, candidates, contacts and jobs migrated, dashboards per consultant, team trained.</span><span class="fr">Comptes, candidats, contacts et jobs migrés, tableaux de bord par consultant, équipe formée.</span><span class="nl">Accounts, kandidaten, contacten en vacatures gemigreerd, dashboards per consultant, team opgeleid.</span><span class="pt">Contas, candidatos, contatos e vagas migrados, painéis por consultor, equipe treinada.</span></p></div><div><p class="who"><span class="en">Deloitte Digital</span><span class="fr">Deloitte Digital</span><span class="nl">Deloitte Digital</span><span class="pt">Deloitte Digital</span></p><b><span class="en">Salesforce consulting, after Corporate Finance</span><span class="fr">Conseil Salesforce, après la Corporate Finance</span><span class="nl">Salesforce-consulting, na Corporate Finance</span><span class="pt">Consultoria Salesforce, depois de Corporate Finance</span></b><p><span class="en">8 years on Salesforce. Certified Salesforce Administrator and Sales Cloud Consultant.</span><span class="fr">8 ans sur Salesforce. Certifié Salesforce Administrator et Sales Cloud Consultant.</span><span class="nl">8 jaar op Salesforce. Gecertificeerd Salesforce Administrator en Sales Cloud Consultant.</span><span class="pt">8 anos em Salesforce. Certificado Salesforce Administrator e Sales Cloud Consultant.</span></p></div></div>
+
+  <div class="ctas-row"><a class="pill solid js-book" href="#contact-form"><span class="en">Discuss a project</span><span class="fr">Parler d'un projet</span><span class="nl">Een project bespreken</span><span class="pt">Falar de um projeto</span></a></div>
+</section>
+
+<div class="wrap sect" id="contact-form">
+  <div class="shead reveal">
+    <h2 class="dsp"><span class="en">Tell me about your project.</span><span class="pt">Conte-me sobre o seu projeto.</span><span class="fr">Parlez-moi de votre projet.</span><span class="nl">Vertel me over uw project.</span></h2>
+    <p><span class="en">Three lines are enough: the tools in place, what's stuck, who suffers from it. I reply within 48 hours.</span><span class="pt">Três linhas bastam: as ferramentas em uso, o que trava, quem sofre com isso. Respondo em até 48 horas.</span><span class="fr">Trois lignes suffisent : les outils en place, ce qui coince, qui en souffre. Je réponds sous 48 heures.</span><span class="nl">Drie regels volstaan: de tools die er zijn, wat vastloopt, wie er last van heeft. Ik antwoord binnen 48 uur.</span></p>
+  </div>
+  <form class="cform reveal" id="cform" novalidate>
+    <input type="hidden" name="access_key" value="4b9592e2-cca2-4f85-9442-17c54e80977a">
+    <input type="hidden" name="subject" value="Partner request — lmidmgroup.com/partners">
+    <input type="hidden" name="from_name" value="LMIDM Group website">
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+    <label><span class="en">Name</span><span class="pt">Nome</span><span class="fr">Nom</span><span class="nl">Naam</span><input name="name" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label><span class="en">Company</span><span class="pt">Empresa</span><span class="fr">Entreprise</span><span class="nl">Bedrijf</span><input name="company" autocomplete="organization"></label>
+    <label><span class="en">Topic</span><span class="pt">Assunto</span><span class="fr">Sujet</span><span class="nl">Onderwerp</span>
+      <select name="topic">
+        <option>Partner / subcontracting</option>
+        <option>Salesforce ↔ Shopify</option>
+        <option>Sales Cloud CRM</option>
+        <option>Sales analytics / win-back</option>
+        <option>AI automation</option>
+        <option>Audit</option>
+        <option>Other</option>
+      </select></label>
+    <label class="full"><span class="en">Your project</span><span class="pt">Seu projeto</span><span class="fr">Votre projet</span><span class="nl">Uw project</span><textarea name="message" required></textarea></label>
+    <div class="full actions">
+      <button type="submit" class="pill solid"><span class="en">Send</span><span class="pt">Enviar</span><span class="fr">Envoyer</span><span class="nl">Verzenden</span></button>
+      <span class="msg" id="cmsg" role="status" aria-live="polite"></span>
+    </div>
+  </form>
+</div>
+
+<div class="footer" id="contact">
+  <div class="wrap">
+    <div class="big"><span class="en">Let’s build the next one<i>.</i></span><span class="pt">Vamos construir a próxima<i>.</i></span><span class="fr">Construisons le prochain<i>.</i></span><span class="nl">Laten we het volgende bouwen<i>.</i></span></div>
+    <div class="ctas">
+      <a class="pill inv" href="mailto:louis@lmidmgroup.com">louis@lmidmgroup.com</a>
+      <a class="pill ghost" style="border-color:#3a3a38;color:#fff" href="https://www.linkedin.com/in/louis-de-moffarts-06573345/" target="_blank">LinkedIn</a>
+    </div>
+    <div class="base">
+      <div>© <span id="yr"></span> Louis de Moffarts · LMIDM Group · <a href="#" onclick="document.getElementById('cc').classList.add('on');return false;">Cookies</a></div>
+      <div>Salesforce · <span class="en">AI automation</span><span class="pt">Automação com IA</span><span class="fr">Automatisation IA</span><span class="nl">AI-automatisering</span> · <span class="en">Energy tools</span><span class="pt">Ferramentas de energia</span><span class="fr">Outils énergie</span><span class="nl">Energietools</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="cc" id="cc" role="dialog" aria-label="Cookies">
+  <p><span class="en">I use Google Analytics to measure visits to this site (anonymised). OK for you?</span><span class="pt">Uso o Google Analytics para medir as visitas deste site (anonimizado). Tudo bem?</span><span class="fr">J'utilise Google Analytics pour mesurer les visites de ce site (anonymisées). D'accord ?</span><span class="nl">Ik gebruik Google Analytics om bezoeken aan deze site te meten (geanonimiseerd). Akkoord?</span></p>
+  <div class="b"><button class="ok" id="cc-yes"><span class="en">Accept</span><span class="pt">Aceitar</span><span class="fr">Accepter</span><span class="nl">Akkoord</span></button><button id="cc-no"><span class="en">Decline</span><span class="pt">Recusar</span><span class="fr">Refuser</span><span class="nl">Weigeren</span></button></div>
+</div>
+<div class="lb" id="lb"><img alt=""></div>
+<script>
+function setLang(l){
+  document.body.className=l;
+  ['en','fr','pt','nl'].forEach(function(x){var b=document.getElementById('btn-'+x);if(b)b.className=(l===x)?'on':'';});
+  document.documentElement.lang=(l==='pt')?'pt-BR':(l==='nl')?'nl-BE':l;
+  document.title={"en": "Salesforce reinforcement for partner consultancies — LMIDM Group", "fr": "Renfort Salesforce pour cabinets partenaires — LMIDM Group", "nl": "Salesforce-versterking voor partnerbureaus — LMIDM Group", "pt": "Reforço Salesforce para consultorias parceiras — LMIDM Group"}[l]||"Salesforce reinforcement for partner consultancies — LMIDM Group";
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+(function(){
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var tk=document.getElementById('tk'); if(tk){tk.innerHTML=tk.innerHTML+tk.innerHTML;}
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cnt(e.target);co.unobserve(e.target);}});},{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+    document.querySelectorAll('[data-count]').forEach(function(el){el.textContent=fmt(parseFloat(el.dataset.count),el);});
+  }
+  function fmt(v,el){var d=parseInt(el.dataset.dec||'0');var s=v.toFixed(d);
+    if(el.dataset.sep){s=Number(s).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});}
+    return s+(el.dataset.suf||'');}
+  function cnt(el){var target=parseFloat(el.dataset.count),t0=null,dur=1100;
+    function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur);p=1-Math.pow(1-p,3);
+      el.textContent=fmt(target*p,el);if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);}
+  var lb=document.getElementById('lb');document.querySelectorAll('.shots img').forEach(function(im){im.addEventListener('click',function(){lb.firstChild.src=im.src;lb.classList.add('on');});});lb.addEventListener('click',function(){lb.classList.remove('on');});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});
+  var f=document.getElementById('cform'),m=document.getElementById('cmsg');
+  if(f){f.addEventListener('submit',function(ev){ev.preventDefault();
+    var L=document.body.className,pt=L==='pt',fr=L==='fr',nl=L==='nl';
+    if(!f.checkValidity()){m.className='msg err';m.textContent=nl?'Vul naam, e-mail en project in.':pt?'Preencha nome, e-mail e projeto.':fr?'Merci de remplir nom, email et projet.':'Please fill in name, email and project.';return;}
+    var fd=new FormData(f);
+    if(fd.get('access_key').indexOf('YOUR_')===0){
+      window.location.href='mailto:louis@lmidmgroup.com?subject='+encodeURIComponent('Project: '+fd.get('topic'))+'&body='+encodeURIComponent(fd.get('message')+'\n\n'+fd.get('name')+' · '+(fd.get('company')||''));return;}
+    m.className='msg';m.textContent=nl?'Verzenden…':pt?'Enviando…':fr?'Envoi…':'Sending…';
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+      .then(function(r){return r.json();})
+      .then(function(j){if(j.success){try{gtag('event','generate_lead',{method:'contact_form'})}catch(e){}f.reset();m.className='msg ok';m.textContent=nl?'Bedankt! Ik antwoord binnen 48 uur.':pt?'Obrigado! Respondo em até 48 horas.':fr?'Merci ! Je vous réponds sous 48 heures.':'Thank you! I will reply within 48 hours.';}else{throw 0;}})
+      .catch(function(){m.className='msg err';m.textContent=nl?'Verzenden mislukt. Mail naar louis@lmidmgroup.com':pt?'Erro no envio. Escreva para louis@lmidmgroup.com':fr?'Échec de l’envoi. Écrivez à louis@lmidmgroup.com':'Sending failed. Please email louis@lmidmgroup.com';});
+  });}
+  var cc=document.getElementById('cc'),cs=null;try{cs=localStorage.getItem('consent')}catch(e){}
+  if(!cs&&window.GA_ID.indexOf('XXXX')<0)cc.classList.add('on');
+  function setC(v){try{localStorage.setItem('consent',v)}catch(e){}gtag('consent','update',{analytics_storage:v});cc.classList.remove('on');}
+  document.getElementById('cc-yes').onclick=function(){setC('granted');};
+  document.getElementById('cc-no').onclick=function(){setC('denied');};
+  /* BOOKING LINK: paste the Cal.com URL between the quotes, e.g. 'https://cal.com/louis-lmidm/30min'.
+     Every button with the class js-book then opens it in a new tab. Empty = buttons scroll to the contact form. */
+  var CAL_URL='';
+  if(CAL_URL){document.querySelectorAll('a.js-book').forEach(function(a){a.href=CAL_URL;a.target='_blank';a.rel='noopener';});}
+  var s=null; try{s=localStorage.getItem('lang')}catch(e){}
+  try{var q=new URLSearchParams(location.search).get('lang');if(['fr','en','pt','nl'].indexOf(q)>=0)s=q;}catch(e){}
+  var nl=(navigator.language||'').toLowerCase();setLang(s||(nl.indexOf('fr')===0?'fr':nl.indexOf('nl')===0?'nl':nl.indexOf('pt')===0?'pt':'en'));
+})();
+</script>
+</body>
+</html>
